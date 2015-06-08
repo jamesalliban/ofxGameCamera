@@ -37,6 +37,7 @@ ofxGameCamera::ofxGameCamera() {
 	usemouse = true;
 	autosavePosition = false;
 	useArrowKeys = false;
+    useWSADKeys = true;
 
 	applyRotation = true;
 	applyTranslation = true;
@@ -78,32 +79,32 @@ void ofxGameCamera::update(ofEventArgs& args){
 
 	if(applyTranslation){
 		int multiplier = invertControls ? -1 : 1;
-		if(ofGetKeyPressed('w') || (useArrowKeys && ofGetKeyPressed(OF_KEY_UP)) ){
+		if((useWSADKeys && ofGetKeyPressed('w')) || (useArrowKeys && ofGetKeyPressed(OF_KEY_UP)) ){
 			dolly(-speed);
 			positionChanged = true;
 		}
 		
-		if(ofGetKeyPressed('s') || (useArrowKeys && ofGetKeyPressed(OF_KEY_DOWN)) ){
+		if((useWSADKeys && ofGetKeyPressed('s')) || (useArrowKeys && ofGetKeyPressed(OF_KEY_DOWN)) ){
 			dolly(speed);
 			positionChanged = true;
 		}
 		
-		if(ofGetKeyPressed('a') || (useArrowKeys && ofGetKeyPressed(OF_KEY_LEFT)) ){
+		if((useWSADKeys && ofGetKeyPressed('a')) || (useArrowKeys && ofGetKeyPressed(OF_KEY_LEFT)) ){
 			truck(-speed);
 			positionChanged = true;
 		}
 		
-		if(ofGetKeyPressed('d') || (useArrowKeys && ofGetKeyPressed(OF_KEY_RIGHT)) ){
+		if((useWSADKeys && ofGetKeyPressed('d')) || (useArrowKeys && ofGetKeyPressed(OF_KEY_RIGHT)) ){
 			truck(speed);
 			positionChanged = true;
 		}
 		
-		if(ofGetKeyPressed('c') || (useArrowKeys && ofGetKeyPressed(OF_KEY_PAGE_DOWN)) ){
+		if((useWSADKeys && ofGetKeyPressed('c')) || (useArrowKeys && ofGetKeyPressed(OF_KEY_PAGE_DOWN)) ){
 			boom(-speed*multiplier);
 			positionChanged = true;
 		}
 		
-		if(ofGetKeyPressed('e') || (useArrowKeys && ofGetKeyPressed(OF_KEY_PAGE_UP)) ){
+		if((useWSADKeys && ofGetKeyPressed('e')) || (useArrowKeys && ofGetKeyPressed(OF_KEY_PAGE_UP)) ){
 			boom(speed*multiplier);
 			positionChanged = true;
 		}

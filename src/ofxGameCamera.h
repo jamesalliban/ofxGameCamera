@@ -33,6 +33,7 @@ class ofxGameCamera : public ofCamera {
 	//enable, disable
 	bool usemouse;
 	bool useArrowKeys;
+    bool useWSADKeys;
 	bool applyRotation;
 	bool applyTranslation;
 	
