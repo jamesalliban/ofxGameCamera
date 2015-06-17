@@ -136,12 +136,12 @@ void ofxGameCamera::update(ofEventArgs& args){
 		}
 
 		if(applyRotation){
-			if(ofGetKeyPressed('r')){
+			if(useWSADKeys && ofGetKeyPressed('r')){
 				currentUp.rotate(rollSpeed,getLookAtDir());
 				lookAt(currLookTarget, currentUp);
 				rotationChanged = true;
 			}
-			if(ofGetKeyPressed('q')){
+			if(useWSADKeys && ofGetKeyPressed('q')){
 				currentUp.rotate(-rollSpeed,getLookAtDir());
 				lookAt(currLookTarget, currentUp);
 				rotationChanged = true;
